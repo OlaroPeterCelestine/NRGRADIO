@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
+import { Ionicons } from '@expo/vector-icons';
 
 const images = [
   'https://ug.nrg.radio/wp-content/uploads/2023/09/03-BREAKFAST-SHOW.webp',
@@ -55,11 +56,13 @@ export default function NRGScreen() {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={[styles.button, styles.buttonSpacing]}>
+          <Ionicons name="play" size={20} color="#fff" style={styles.icon} />
           <Text style={styles.buttonText}>WATCH</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
+          <Ionicons name="headset" size={20} color="#fff" style={styles.icon} />
           <Text style={styles.buttonText}>LISTEN</Text>
         </TouchableOpacity>
       </View>
@@ -82,15 +85,23 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     width: '60%',
     marginTop: 30,
   },
   button: {
+    flexDirection: 'row',
     backgroundColor: '#FF3B30',
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 15,
+    alignItems: 'center',
+  },
+  buttonSpacing: {
+    marginRight: 20,
+  },
+  icon: {
+    marginRight: 8,
   },
   buttonText: {
     color: '#fff',
